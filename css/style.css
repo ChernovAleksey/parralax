@@ -1,0 +1,382 @@
+/*general styles*/
+@font-face {
+  font-family: "FuturaBT";
+  src: url("../fonts/futura-bt-bold.woff2");
+  font-display: swap;
+}
+html {
+  box-sizing: border-box;
+  overflow: hidden;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+}
+*,
+*::before,
+*::after,
+:root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  font-family: "Roboto", sans-serif;
+}
+/*parallax general engine*/
+.parallax {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 300px;
+}
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.parallax__back {
+  transform: translateZ(-296px) scale(2.05);
+}
+.parallax__deep {
+  transform: translateZ(-596px) scale(3.05);
+}
+/*parallax groupes (layers)*/
+.group-header {
+  z-index: 3;
+}
+.group-header .parallax__back {
+  background-image: url("../img/bg1.jpg");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.group-what {
+  background: #fff;
+  z-index: 3;
+}
+.group-companies {
+  z-index: 2;
+}
+.group-companies .parallax__deep {
+  background-image: url("../img/bg2.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.group-meet {
+  z-index: 3;
+  background: #fff;
+}
+.group-testimonials {
+  z-index: 2;
+}
+.group-testimonials .parallax__back {
+  background-image: url("../img/bg3.jpg");
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+.group-why {
+  z-index: 3;
+  background: #fff;
+}
+/*the structure of the content on the layers*/
+/*header*/
+.header {
+  height: 114vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 7vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+/*header-menu*/
+.header .header-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 3vh 10vw;
+}
+/*header-menu-logo*/
+.header .header-menu .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5vh;
+  font-family: "Roboto", sans-serif;
+}
+.header .header-menu .logo h1:first-child {
+  font-weight: 300;
+}
+.header .header-menu .logo h1:last-child {
+  font-weight: 700;
+  color: #14afca;
+}
+/*header-menu-navigation*/
+.header .header-menu .right-menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5vh;
+  font-weight: 700;
+  color: #424f57;
+}
+.header .header-menu .right-menu ul li:first-child {
+  color: #14afca;
+}
+/*header-title*/
+.header .header-title {
+  width: 70vw;
+  text-align: center;
+  align-self: center;
+  font-size: 3.5vw;
+  font-family: "FuturaBT", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: white;
+  padding-bottom: 50vh;
+}
+/*what - section*/
+.what {
+  overflow: hidden;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+.what p {
+  padding-top: 2vh;
+  font-weight: normal;
+  font-size: 2vh;
+  font-family: "Roboto", sans-serif;
+  line-height: 3vh;
+  width: 60vw;
+  text-align: center;
+  color: #424f57;
+}
+/*companies - section*/
+.companies {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+/*companies - titles*/
+.companies .company-title {
+  width: 40vw;
+  padding-top: 20vh;
+}
+/*companies - image - grid -section*/
+.companies .logo-imgs {
+  width: 70vw;
+  padding-top: 2vh;
+  padding-bottom: 20vh;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 10vh;
+}
+.companies .logo-imgs img {
+  width: 12vw;
+}
+.companies .logo-imgs .adobe {
+  width: 25vh;
+  height: 10vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5vw;
+}
+.companies .logo-imgs .adobe img {
+  width: 11vh;
+}
+/*meet us - section*/
+.meet {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15vh;
+}
+/*meet us - faces - grid section*/
+.meet .faces {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  grid-row-gap: 4vh;
+  grid-column-gap: 5vw;
+  padding-top: 3vh;
+}
+.meet .faces p {
+  width: 20vw;
+  font-family: "Roboto", sans-serif;
+  align-self: center;
+  text-align: center;
+  color: #424f57;
+  font-size: 2.1vh;
+}
+.meet .faces img {
+  width: 15vw;
+}
+/*testimonials - section*/
+.testim {
+  overflow: hidden;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5vh;
+}
+.testim p {
+  font-size: 2vh;
+  line-height: 3vh;
+  padding-top: 2vh;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  width: 50vw;
+  color: white;
+  align-self: center;
+  text-align: center;
+}
+.testim .ahmed {
+  width: 30vw;
+  text-align: end;
+  align-self: center;
+  font-size: 2vh;
+  line-height: 4vh;
+  font-family: "Open Sans", sans-serif;
+  font-style: italic;
+  letter-spacing: 0.1vw;
+  color: white;
+}
+/* why & footer sections*/
+.why {
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 25vh;
+}
+/*why section*/
+.why .why-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4vh;
+}
+.why .why-main .why-wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2vh;
+}
+.why .why-main .innovation {
+  width: 60vw;
+  text-align: center;
+  font-weight: 700;
+  font-size: 2vw;
+  font-family: "Roboto", sans-serif;
+  line-height: 3vw;
+  color: #424f57;
+}
+/*footer sestion*/
+.why .footer {
+  padding: 5vh 0;
+  text-align: center;
+  font-size: 2vh;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1vh;
+}
+.why .footer p span {
+  font-weight: 900;
+  font-size: 2vh;
+  line-height: 4vh;
+  letter-spacing: 0.04vw;
+  color: #3d3c3c;
+}
+/*general titles gesign*/
+.what h1,
+.companies .company-title h1,
+.meet h1,
+.testim h1,
+.why .why-main .why-wraper h1 {
+  padding-top: 15vh;
+  font-weight: 700;
+  font-size: 7vh;
+  line-height: 5vh;
+  color: #14afca;
+  text-transform: uppercase;
+}
+.what h4,
+.companies .company-title h4,
+.meet h4,
+.testim h4,
+.why .why-main .why-wraper h4 {
+  padding-top: 2vh;
+  font-weight: 600;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2.5vh;
+  line-height: 8vh;
+  color: #424f57;
+}
+.companies .company-title h4,
+.testim h4 {
+  color: #fff;
+}
+/*general solutions for the triangle-stuctures*/
+.header::before,
+.testim::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 83vh;
+  width: 100vw;
+  height: 30vh;
+  border-right: 50vw solid rgba(255, 255, 255, 1);
+  border-left: 50vw solid rgba(255, 255, 255, 1);
+  border-top: 17vh solid rgba(255, 255, 255, 0);
+  border-bottom: 17vh solid #fff;
+}
+.companies::before,
+.testim::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 30vh;
+  border-right: 50vw solid rgba(0, 0, 0, 0);
+  border-left: 50vw solid rgba(0, 0, 0, 0);
+  border-top: 17vh solid white;
+}
